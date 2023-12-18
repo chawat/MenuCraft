@@ -4,8 +4,7 @@ body {
     padding: 0px;
     font: 100% verdana, arial, helvetica, sans-serif;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%),
-    url('../images/background.jpg');
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%);
     background-position: center;
     background-size: cover;
     height: 109vh;

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/login.css";
-import backgroundImage from '../images/background.jpg';
+import backgroundImage from '../images/backghome.jpg';
+import Navbar from "./navbar";
 
 function Login() {
   const containerStyle = {
@@ -22,6 +23,8 @@ function Login() {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="form">
       <h1>LOGIN HERE</h1>
       <p>Username :</p>
@@ -52,6 +55,7 @@ function Login() {
           <ion-icon name="logo-skype"></ion-icon>
         </a>
       </div>
+    </div>
     </div>
   );
 }
