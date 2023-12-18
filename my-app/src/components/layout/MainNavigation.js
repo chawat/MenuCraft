@@ -7,16 +7,16 @@ function MainNavigation(){
 return(
 
 <header >
-    <div >React Meetups</div>
+    
     <nav>
         <ul>
-            <li>
+            {/* <li>
                 <Link to='/'>Home</Link>
             </li>
             <li>
                 <Link to='/Login'>Login</Link>
             </li>
-            
+             */}
         </ul>
     </nav>
 </header>

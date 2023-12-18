@@ -1,7 +1,16 @@
 import React from "react";
 import "../styles/login.css";
+import backgroundImage from '../images/background.jpg';
 
 function Login() {
+  const containerStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: 'wrap content', // Set your desired height
+    // You can add more styles as needed
+  };
   const validate = () => {
     // Implement your validation logic here
     console.log("Validation logic goes here");
