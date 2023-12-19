@@ -4,8 +4,18 @@ import React from 'react';
 import "../styles/menu.css";
 import Navbar from "./navbar";
 import VegetableItem from './vegetableitem';
-import Tomato from '../images/ClubSandwich.jpg';
+import Ketchup from '../images/ketchup.jpg';
 import backgroundImage from '../images/backMenu.jpg';
+import Honey from '../images/honey.jpg';
+import Lettuce from '../images/lettuce.jpg';
+import Cheese from '../images/cheese.jpg';
+import Bacon from '../images/bacon.jpg';
+import CheeseDip from '../images/CheeseDip.jpg';
+import Meat from '../images/meat.jpg';
+import Tomato from '../images/tomato.jpg';
+
+
+
 
 function Ingredients() {
   const containerStyle = {
@@ -23,11 +33,11 @@ function Ingredients() {
       <input type="hidden" name="recipient" value="chalitahawat1@gmail.com" />
 
       <div className="wrapper">
-        <h1 className="header">All Menu</h1>
+        <h1 className="header">All Ingredients</h1>
       </div>
       <div className="main-body">
         <div className="content">
-        <img className="c1" src={Tomato} alt="Tomato" />
+        <img className="c1" src={Ketchup} alt="Tomato" />
 
 <p>
   ClubSandwich     4.5$ <br />
@@ -44,7 +54,7 @@ function Ingredients() {
   />
 </label>
 </p>
-<img className="c1" src={Tomato} alt="Tomato" />
+<img className="c1" src={CheeseDip} alt="Tomato" />
 
 <p>
   ClubSandwich     4.5$ <br />
@@ -61,7 +71,7 @@ function Ingredients() {
   />
 </label>
 </p>
-<img className="c1" src={Tomato} alt="Tomato" />
+<img className="c1" src={Bacon} alt="Tomato" />
 
 <p>
   ClubSandwich     4.5$ <br />
@@ -82,7 +92,7 @@ function Ingredients() {
           {/* Your vegetable images and details */}
         </div>
         <div className="left">
-        <img className="c1" src={Tomato} alt="Tomato" />
+        <img className="c1" src={Meat} alt="Tomato" />
 
         <p>
   ClubSandwich     4.5$ <br />
@@ -99,7 +109,7 @@ function Ingredients() {
   />
 </label>
 </p>
-<img className="c1" src={Tomato} alt="Tomato" />
+<img className="c1" src={Cheese} alt="Tomato" />
 
 <p>
   ClubSandwich     4.5$ <br />
@@ -116,7 +126,7 @@ function Ingredients() {
   />
 </label>
 </p>
-<img className="c1" src={Tomato} alt="Tomato" />
+<img className="c1" src={Lettuce} alt="Tomato" />
 
 <p>
   ClubSandwich     4.5$ <br />
@@ -136,7 +146,7 @@ function Ingredients() {
           {/* More vegetable images and details */}
         </div>
         <div className="right">
-        <img className="c1" src={Tomato} alt="Tomato" />
+        <img className="c1" src={Honey} alt="Tomato" />
 
         <p>
   ClubSandwich     4.5$ <br />

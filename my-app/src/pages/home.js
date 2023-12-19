@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from "./navbar";
 import { Link } from 'react-router-dom';
 import "../styles/indes.css";
 import backgroundImage from '../images/backghome.jpg'; // Adjust the path based on your folder structure
@@ -14,8 +15,9 @@ function Home() {
   };
 
   return (
+    <div>
     <div className="main" style={containerStyle}>
-      <div className="navbar">
+      {/* <div className="navbar">
         <div className="icon">
           <h2 className="logo">Menu Craft</h2>
         </div>
@@ -28,7 +30,8 @@ function Home() {
             <li><Link to="/contactus">CONTACT US</Link></li>
           </ul>
         </div>
-      </div>
+      </div> */}
+      <Navbar/>
       <div className="content">
         <h1>Welcome to<span>MenuCraft</span></h1>
         <p className="par">
@@ -39,6 +42,7 @@ function Home() {
         </p>
         
       </div>
+    </div>
     </div>
   );
 }

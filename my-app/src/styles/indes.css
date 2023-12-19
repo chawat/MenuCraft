@@ -60,11 +60,22 @@
     font-weight: bold;
     transition: 0.4s ease-in-out;
   }
-  
-  ul li link:hover,
-  .active link {
-    color: #ff7200;
+  .menu ul li a:visited {
+    background-color: black;
+    color: #ff7200; /* Replace with your desired second color */
   }
+  .menu ul li a:active {
+    background-color: black;
+    color: #ff7200; /* Replace with your desired second color */
+  }
+  /* Add this to your existing CSS */
+
+.menu ul li .active,
+.menu ul li a:visited {
+  color: #ff7200;
+  background-color: black; /* Replace with your desired second color */
+}
+
   
   .content {
     width: 1200px;
