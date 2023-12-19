@@ -22,7 +22,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs/>} />
           <Route path="/ingredients" element={<Ingredients/>} />
           <Route path="/addtomenu" element={<Addtomenu/>} />
-          <Route path="/ChosenItems" element={<ChosenItems/>}/>
+          {/* <Route path="/ChosenItems" element={<ChosenItems/>}/> */}
         </Routes>
       {/* </Layout> */}
     </Router>

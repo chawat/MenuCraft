@@ -1,5 +1,9 @@
 /* Add this CSS to your existing stylesheet or create a new one */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .main-body {
     display: flex;
     justify-content: center;
@@ -84,4 +88,33 @@
     /* Additional styles for large screens */
     font-size: 18px;
   }
+  .footer input[type="reset"],
+.footer input[type="submit"],
+.footer ul {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0; 
+  padding: 5px;
+  margin-left: 5px;
+  background-color: #578ecc;
+    color: #eee7e7;
+
+}
+.footer input:hover{
+  background-color: #ff7200;
+}
+.footer ul li {
+  list-style: none;
+}
+/* Add this to your existing CSS */
+
+
+
+/* .footer .create-your-own-link {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+} */
+
   

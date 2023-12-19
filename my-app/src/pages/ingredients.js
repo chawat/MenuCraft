@@ -38,8 +38,10 @@ function Ingredients() {
 
 
   return (
+    
   <div>
     <Navbar/>
+   
     <div className='main-body'>
       <div className='content'>
         {ingredientsData.map((item,index) =>(
@@ -65,8 +67,25 @@ function Ingredients() {
       </div>
     </div>
     <div class="container">
-    <button onClick={changePathButton} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Check</button>
+    {/* <button onClick={changePathButton} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Check</button>
+    <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link to="/addtomenu" className="create-your-own-link">
+      <input type="submit" value="Add To Menu!" />
+    </Link>
+    </button> */}
+     <form method="post" action="chalitahawat1@gmail.com">
+      <input type="hidden" name="recipient" value="chalitahawat1@gmail.com" />
+    
+    <p>
+    <input type="reset" value="Clear"  />
+    <input type="submit" value="Submit"  />
+    <Link to="/addtomenu" className="create-your-own-link">
+      <input type="submit" value="Add To Menu!" />
+    </Link>
+  </p>
+  </form>
     </div>
+    
+    
     </div>
   );
 }
