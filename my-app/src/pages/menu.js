@@ -191,39 +191,7 @@ function Menu() {
           {/* Additional vegetable images and details */}
         </div>
       </div>
-      {/* <div className="footer">
-        <p>
-          <input type="reset" value="Clear" />
-          <input type="submit" value="Submit" />
-          <ul><li><Link to="/ingredients"> <input type="submit" value="Create your own!" /></Link></li></ul>
-        </p>
-      </div> */}
-      {/* <div className="footer">
-  <p>
-    <input type="reset" value="Clear" style={{ marginRight: '10px' }} />
-    <input type="submit" value="Submit" style={{ marginRight: '10px' }} />
-    <ul style={{ display: 'inline-block' }}>
-      <li>
-        <Link to="/ingredients">
-          <input type="submit" value="Create your own!" />
-        </Link>
-      </li>
-    </ul>
-  </p>
-</div> */}
-{/* <div className="footer">
-  <p>
-    <input type="reset" value="Clear" style={{ marginRight: '10px', verticalAlign: 'middle' }} />
-    <input type="submit" value="Submit" style={{ marginRight: '10px', verticalAlign: 'middle' }} />
-    <ul style={{ display: 'inline-block', verticalAlign: 'middle', margin: 0 }}>
-      <li>
-        <Link to="/ingredients">
-          <input type="submit" value="Create your own!" />
-        </Link>
-      </li>
-    </ul>
-  </p>
-</div> */}
+     
 <div className="footer">
   <p>
     <input type="reset" value="Clear"  />

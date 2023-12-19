@@ -13,6 +13,7 @@ import Bacon from '../images/bacon.jpg';
 import CheeseDip from '../images/CheeseDip.jpg';
 import Meat from '../images/meat.jpg';
 import Tomato from '../images/tomato.jpg';
+import { Link } from 'react-router-dom';
 
 
 
@@ -201,11 +202,14 @@ function Ingredients() {
         </div>
       </div>
       <div className="footer">
-        <p>
-          <input type="reset" value="Clear" />
-          <input type="submit" value="Submit" />
-        </p>
-      </div>
+  <p>
+    <input type="reset" value="Clear"  />
+    <input type="submit" value="Submit"  />
+    <Link to="/addtomenu" className="create-your-own-link">
+      <input type="submit" value="Add To Menu!" />
+    </Link>
+  </p>
+</div>
     </form>
     </div>
   );

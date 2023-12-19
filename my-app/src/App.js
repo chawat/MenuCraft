@@ -6,6 +6,7 @@ import Login from './pages/login.js';
 import Menu from './pages/menu.js';
 import ContactUs from './pages/contactus.js';
 import Ingredients from './pages/ingredients.js';
+import Addtomenu from './pages/addtomenu.js';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/contactus" element={<ContactUs/>} />
           <Route path="/ingredients" element={<Ingredients/>} />
+          <Route path="/addtomenu" element={<Addtomenu/>} />
         </Routes>
       {/* </Layout> */}
     </Router>

@@ -54,20 +54,19 @@
     font-size: 20px;
   }
   
-  ul li link {
+  ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #5426aa;
     font-family: Arial;
     font-weight: bold;
     
+    
   }
-  .menu ul li a:visited {
-    background-color: black;
-    color: #ff7200; /* Replace with your desired second color */
+  .menu ul li a{
+    color: #4e38c7; /* Replace with your desired second color */
   }
 .menu ul li a:visited {
-  color: #ff7200;
-  background-color: black; /* Replace with your desired second color */
+  color: #3e299b;/* Replace with your desired second color */
 }
   
   /* Add this to your existing CSS */

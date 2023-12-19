@@ -73,6 +73,7 @@
     border-bottom: 3px solid #1b1b1b;
     margin-left: 3px;
   }
+
   
   .c1:hover {
     transform: scale(1.1);
@@ -93,8 +94,15 @@
   display: inline-block; /* Display buttons and ul in a line */
   vertical-align: middle; /* Align elements vertically in the middle */
   margin: 0; /* Remove default margin */
-}
+  padding: 5px;
+  margin-left: 5px;
+  background-color: #578ecc;
+    color: #eee7e7;
 
+}
+.footer input:hover{
+  background-color: #ff7200;
+}
 .footer ul li {
   list-style: none;
 }
