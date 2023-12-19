@@ -1,0 +1,87 @@
+/* Add this CSS to your existing stylesheet or create a new one */
+
+.main-body {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display three columns */
+    gap: 20px; /* Adjust the gap between columns */
+  }
+  
+  .content > div {
+    text-align: center;
+  }
+  
+  .c1 {
+    width: 150px; /* Set your desired width */
+    height: 150px; /* Set your desired height */
+    border-radius: 8px; /* Add border-radius for a rounded appearance */
+    object-fit: cover; /* Ensure the image covers the square */
+    margin: 0 auto; /* Center the image within the square */
+  }
+  
+  p {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+  
+
+  button {
+    background-color: #4caf50; /* Green color, you can customize */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover, you can customize */
+  }
+  
+
+  .container {
+    display: flex;
+    justify-content: flex-end; /* Align to the end of the container */
+    margin-right: 20px; /* Adjust the right margin as needed */
+  }
+  
+  /* Styles for generic button */
+  .btn {
+    /* Your generic button styles here */
+    padding: 10px 15px;
+    background-color: #3490dc;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Styles for extra-small screens */
+  .btn-xs {
+    /* Additional styles for extra-small screens */
+    font-size: 12px;
+  }
+  
+  /* Styles for small screens */
+  .sm\:btn-sm {
+    /* Additional styles for small screens */
+    font-size: 14px;
+  }
+  
+  /* Styles for medium screens */
+  .md\:btn-md {
+    /* Additional styles for medium screens */
+    font-size: 16px;
+  }
+  
+  /* Styles for large screens */
+  .lg\:btn-lg {
+    /* Additional styles for large screens */
+    font-size: 18px;
+  }
+  

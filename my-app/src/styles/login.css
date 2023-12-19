@@ -105,3 +105,16 @@ body {
 .icons ion-icon:hover {
     color: #ff7200;
 }
+
+.password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .password-toggle-button {
+    position: absolute;
+    right: 8px; /* Adjust the right distance as needed */
+    cursor: pointer;
+  }
+  
