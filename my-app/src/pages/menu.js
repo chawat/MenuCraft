@@ -1,7 +1,8 @@
 // Vegetables.js
 
 import React from 'react';
-import "../styles/menu.css";
+ import "../styles/menu.css";
+
 import Navbar from "./navbar";
 import VegetableItem from './vegetableitem';
 import Tomato from '../images/ClubSandwich.jpg';

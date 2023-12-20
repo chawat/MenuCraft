@@ -49,7 +49,8 @@ function Ingredients() {
   return (
     <div>
       <Navbar />
-
+      <form method='post' action='chalitahawat1@gmail.com'>
+          <input type='hidden' name='recipient' value='chalitahawat1@gmail.com' />
       <div className='main-body'>
         <div className='content'>
           {ingredientsData.map((item, index) => (
@@ -57,8 +58,19 @@ function Ingredients() {
               <img className='c1' src={item.image} alt={item.name} />
               <p>
                 {item.name} {item.price}$ <br />
+                <label>
+  {/* Weight: */}
+  <input
+    type="number"
+    name="weight" 
+    min="0"
+    max="100"
+    step="1"
+    defaultValue="0" 
+  />
+</label>
                 
-                <button onClick={() => { handleAddButtonClick(); }}>Add</button>
+                {/* <button onClick={() => { handleAddButtonClick(); }}>Add</button> */}
               </p>
             </div>
           ))}
@@ -66,8 +78,7 @@ function Ingredients() {
       </div>
 
       <div className='container'>
-        <form method='post' action='chalitahawat1@gmail.com'>
-          <input type='hidden' name='recipient' value='chalitahawat1@gmail.com' />
+        
 
           <p>
             <input type='reset' value='Clear' />
@@ -107,8 +118,9 @@ function Ingredients() {
               </div>
             )}
           </div>
-        </form>
+        
       </div>
+      </form>
     </div>
   );
 }
