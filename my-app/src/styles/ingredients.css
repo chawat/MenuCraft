@@ -117,4 +117,79 @@
   right: 0;
 } */
 
-  
+  /* Style for the button */
+.btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Style for the modal */
+.modal {
+  display: none;
+}
+
+.modal-box {
+  max-width: 400px;
+  margin: 10% auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.modal p {
+  margin-top: 10px;
+}
+
+.modal-action {
+  margin-top: 20px;
+}
+
+/* You can add more styles as needed */
+/* Style for the modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the modal box */
+.modal-box {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.indicator {
+  position: relative;
+  display: inline-block;
+}
+
+.indicator-item {
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
