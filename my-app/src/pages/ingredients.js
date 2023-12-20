@@ -57,16 +57,7 @@ function Ingredients() {
               <img className='c1' src={item.image} alt={item.name} />
               <p>
                 {item.name} {item.price}$ <br />
-                <label>
-                  <input
-                    type='number'
-                    name={`weight_${index}`}
-                    min='0'
-                    max='100'
-                    step='1'
-                    defaultValue='0'
-                  />
-                </label>
+                
                 <button onClick={() => { handleAddButtonClick(); }}>Add</button>
               </p>
             </div>
