@@ -5,13 +5,12 @@ import Home from './pages/home.js';
 import Login from './pages/login.js';
 import Menu from './pages/menu.js';
 import ContactUs from './pages/contactus.js';
-import Ingredients from './pages/ingredients.js';
 import Addtomenu from './pages/addtomenu.js';
-import ChosenItems from './pages/ChosenItems.js';
-
+import Ingredients from './pages/ingredients/ingredients.js';
 
 function App() {
   return (
+    <div>
     <Router>
       {/* <Layout> */}
         {/* MainNavigation component can be placed here if it's intended to be present on all pages */}
@@ -26,6 +25,7 @@ function App() {
         </Routes>
       {/* </Layout> */}
     </Router>
+    </div>
   );
 }
 

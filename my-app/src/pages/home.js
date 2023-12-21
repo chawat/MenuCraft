@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from "./navbar";
 import { Link } from 'react-router-dom';
-import "../styles/indes.css";
-import backgroundImage from '../images/backghome.jpg'; // Adjust the path based on your folder structure
+import "../styles/home.css";
+import backgroundImage from '../images/background.png'; // Adjust the path based on your folder structure
+import "../styles/navbar.css";
 
 function Home() {
   const containerStyle = {

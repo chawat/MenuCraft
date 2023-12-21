@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import '../styles/menu.css';
-import Navbar from './navbar';
-import Ketchup from '../images/ketchup.jpg';
+import './ingredients.css';
+import Navbar from '../navbar';
+import { PRODUCTS } from '../productsIng';
+/* import Ketchup from '../images/ketchup.jpg';
 import Honey from '../images/honey.jpg';
 import Lettuce from '../images/lettuce.jpg';
 import Cheese from '../images/cheese.jpg';
 import Bacon from '../images/bacon.jpg';
 import CheeseDip from '../images/CheeseDip.jpg';
 import Meat from '../images/meat.jpg';
-import Tomato from '../images/tomato.jpg';
+import Tomato from '../images/tomato.jpg'; */
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/ingredients.css';
+
 
 function Ingredients() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function Ingredients() {
     setModalOpen(false);
   };
 
-  const ingredientsData = [
+   /* const ingredientsData = [
     { name: 'Ketchup', price: 4.5, image: Ketchup },
     { name: 'CheeseDip', price: 4.5, image: CheeseDip },
     { name: 'Bacon', price: 4.5, image: Bacon },
@@ -44,38 +45,42 @@ function Ingredients() {
     { name: 'ClubSandwich', price: 4.5, image: Lettuce },
     { name: 'ClubSandwich', price: 4.5, image: Tomato },
     { name: 'ClubSandwich', price: 4.5, image: Honey },
-  ];
+  ];*/
 
   return (
     <div>
       <Navbar />
       <form method='post' action='chalitahawat1@gmail.com'>
           <input type='hidden' name='recipient' value='chalitahawat1@gmail.com' />
+
       <div className='main-body'>
         <div className='content'>
-          {ingredientsData.map((item, index) => (
+
+          {PRODUCTS.map((item, index) => (
             <div key={index}>
               <img className='c1' src={item.image} alt={item.name} />
               <p>
                 {item.name} {item.price}$ <br />
                 <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-                
-                {/* <button onClick={() => { handleAddButtonClick(); }}>Add</button> */}
+                  
+                  <input
+                    type="number"
+                    name="weight" 
+                    min="0"
+                    max="100"
+                    step="1"
+                    defaultValue="0" 
+                  />
+                </label>
+                <button>Add</button>
               </p>
+              
             </div>
           ))}
         </div>
       </div>
+
+
 
       <div className='container'>
         

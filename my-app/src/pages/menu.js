@@ -2,12 +2,11 @@
 
 import React from 'react';
  import "../styles/menu.css";
-
 import Navbar from "./navbar";
-import VegetableItem from './vegetableitem';
-import Tomato from '../images/ClubSandwich.jpg';
 import backgroundImage from '../images/backMenu.jpg';
 import { Link } from 'react-router-dom';
+import { ProductsMenu } from './productsMenu';
+
 
 function Menu() {
   const containerStyle = {
@@ -27,169 +26,30 @@ function Menu() {
       <div className="wrapper">
         <h1 className="header">All Menu</h1>
       </div>
-      <div className="main-body">
-        <div className="content">
-        <img className="c1" src={Tomato} alt="Tomato" />
+      <div className='main-body'>
+        <div className='content'>
 
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-
-          {/* Your vegetable images and details */}
-        </div>
-        <div className="left">
-        <img className="c1" src={Tomato} alt="Tomato" />
-
-        <p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-          {/* More vegetable images and details */}
-        </div>
-        <div className="right">
-        <img className="c1" src={Tomato} alt="Tomato" />
-
-        <p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-<img className="c1" src={Tomato} alt="Tomato" />
-
-<p>
-  ClubSandwich     4.5$ <br />
-  {/* <input name="ClubSandwich" type="radio" /> */}
-  <label>
-  {/* Weight: */}
-  <input
-    type="number"
-    name="weight" 
-    min="0"
-    max="100"
-    step="1"
-    defaultValue="0" 
-  />
-</label>
-</p>
-          {/* Additional vegetable images and details */}
+          {ProductsMenu.map((item, index) => (
+            <div key={index}>
+              <img className='c1' src={item.image} alt={item.name} />
+              <p>
+                {item.name} {item.price}$ <br />
+                <label>
+                  
+                  <input
+                    type="number"
+                    name="weight" 
+                    min="0"
+                    max="100"
+                    step="1"
+                    defaultValue="0" 
+                  />
+                </label>
+                <button>Add</button>
+              </p>
+              
+            </div>
+          ))}
         </div>
       </div>
      
