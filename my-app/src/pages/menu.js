@@ -5,10 +5,12 @@ import React from 'react';
 import Navbar from "./navbar";
 import backgroundImage from '../images/backMenu.jpg';
 import { Link } from 'react-router-dom';
+
 import { ProductsMenu } from './productsMenu';
 
 
 function Menu() {
+
   const containerStyle = {
     
     backgroundImage: `url(${backgroundImage})`,

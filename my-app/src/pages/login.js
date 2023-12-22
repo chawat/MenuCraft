@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../styles/login.css";
 import backgroundImage from '../images/backghome.jpg';
 import Navbar from "./navbar";
-import { useState } from "react";
-
+import Axios from 'axios';
 function Login() {
   const [isPasswordHidden, setPasswordHidden] = useState(true);
+
+
+  const [name, setName]=useState('');
+  const [password, setPassword]=useState('');
+  const submitR=()=>{
+    Axios.post('http://localhost:3001/api/insert',
+     {name:name, password:password
+    }).then(()=>{
+      alert('successeful insert');
+    });
+  };
+
+
+
 
   const containerStyle = {
     backgroundImage: `url(${backgroundImage})`,
@@ -38,7 +51,9 @@ function Login() {
                 <input 
                     type="text"
                     placeholder="Username"
+                    name="name"
                     id="username"
+                    onChange={(e)=>{setName(e.target.value);}}
                 />
             </div>
         </div>
@@ -48,25 +63,17 @@ function Login() {
                 <input
                     type={isPasswordHidden ? "password" : "text"}
                     placeholder="Enter your password"
+                    name="password"
                     className="w-full pr-12 pl-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
-                />
-                <button
-                  onClick={() => setPasswordHidden(!isPasswordHidden)}
-                  className="password-toggle-button"
-                >
-                  </button>
-                </div>
+                    onChange={(e)=>{setPassword(e.target.value);}}
 
-                <input
-                    type={isPasswordHidden ? "password" : "text"}
-                    placeholder="Enter your password"
-                    className="w-full pr-12 pl-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                 />
-            
+                
+                </div >
         </div >
 
       
-      <input type="submit" name="" value="LOGIN" onClick={validate} />
+      <input type="submit" name="" value="LOGIN" onClick={submitR} />
       <p className="link">
         Don't have an account <br />
         <a href="#">Sign up </a>here

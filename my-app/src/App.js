@@ -9,6 +9,7 @@ import Addtomenu from './pages/addtomenu.js';
 import Ingredients from './pages/ingredients/ingredients.js';
 
 function App() {
+  
   return (
     <div>
     <Router>
