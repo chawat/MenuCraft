@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from "./navbar";
+import Navbar from "../navbar";
 import { Link } from 'react-router-dom';
-import "../styles/home.css";
-import backgroundImage from '../images/background.png'; // Adjust the path based on your folder structure
-import "../styles/navbar.css";
+import "./home.css";
+import backgroundImage from "../../images/background.png"
+// import "../styles/navbar.css";
 
 function Home() {
   const containerStyle = {
@@ -34,15 +34,15 @@ function Home() {
       </div> */}
       <Navbar/>
       <div className="content">
-        <h1>Welcome to<span>MenuCraft</span></h1>
-        <p className="par">
-          The ultimate dining experience!<br />
-          Discover a delightful blend of chef-curated plates and the freedom to customize your own culinary masterpiece.<br />
-          Explore preset options or craft a dish that suits your unique taste.<br />
-          Your perfect meal, your way.
-        </p>
-        
-      </div>
+      <p className="par">
+          <h1>Welcome to<span>MenuCraft<br/></span></h1>
+          
+            <br/>The ultimate dining experience!<br />
+            Discover a delightful blend of chef-curated plates and the freedom to customize your own culinary masterpiece.<br />
+            Explore preset options or craft a dish that suits your unique taste.<br />
+            Your perfect meal, your way.
+          </p>
+        </div>
     </div>
     </div>
   );
