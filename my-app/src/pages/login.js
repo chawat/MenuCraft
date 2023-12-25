@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "../styles/login.css";
+import { Link } from 'react-router-dom';
 import backgroundImage from '../images/backghome.jpg';
 import Navbar from "./navbar";
 import Axios from 'axios';
@@ -72,8 +73,11 @@ function Login() {
                 </div >
         </div >
 
+        <Link to="/menu" className="create-your-own-link">
       
+    
       <input type="submit" name="" value="LOGIN" onClick={submitR} />
+      </Link>
       <p className="link">
         Don't have an account <br />
         <a href="#">Sign up </a>here
