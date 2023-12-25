@@ -6,10 +6,11 @@
   
   .main {
     width: 100%;
+    height: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
-    background-position: center;
-    background-size: cover;
-    height: 109vh;
+    /* background-position: center; */
+    /* background-size: cover; */
+    
   }
   
   .navbar {
@@ -18,7 +19,7 @@
     margin: auto;
   }
   
-  .icon {
+   .icon {
     width: 200px;
     float: left;
     height: 70px;
@@ -31,7 +32,7 @@
     padding-left: 20px;
     padding-top: 10px;
     float: left;
-  }
+  } 
   
   .menu {
     width: 400px;
@@ -76,14 +77,23 @@
   background-color: black; /* Replace with your desired second color */
 }
 
-.content {
+/* .content {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh; /* Adjust the height as needed */
-  padding: 0 50px; /* Add padding for better visibility */
+  height: 100vh; 
+  padding: 0 50px; 
   text-align: center;
-}
+} */
+/* .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  padding: 0 50px;
+  text-align: center;
+} */
 
 h1 {
   font-size: 3.5rem;
@@ -102,18 +112,18 @@ h1 span {
 
 }
 
-.par {
+/* .par {
   font-size: 0.9rem;
   color: rgb(235, 235, 235);
-  text-align: center; /* Align text to the right */
-  max-width: 500px; /* Set a maximum width if needed */
-  margin-top: 250px; /* Adjust margin as needed */
+  text-align: center; 
+  max-width: 500px; 
+  margin-top: 250px; 
   
-}
+} */
 
   
   .image {
-    height: 300px;
+    height: 100px;
     width: 300px;
     margin-right: 20px;
     margin-left: 20px;
@@ -121,4 +131,54 @@ h1 span {
     overflow: hidden;
   }
   
+  /* .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    padding: 0 50px;
+    text-align: center;
+  }
   
+  .par {
+    font-size: 0.9rem;
+    color: rgb(235, 235, 235);
+    text-align: center; 
+    max-width: 500px;
+    margin-top: 20px; 
+    float: left;
+  }
+   */
+
+   .content{
+    width: 1200px;
+    height: 1200px;
+    margin: 20em;
+    /* padding-top: -5em; */
+    color: #fff;
+    position: relative;
+    text-align: center;
+    margin-top: auto;
+}
+.content .par{
+    padding-left: 26em;
+    /* padding-top: 25px; */
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+     padding-left: 20px; 
+    margin-top: 1%; 
+    letter-spacing: 2px;
+    
+}
+
+
+.content span{
+    color: #ff7200;
+    font-size: 60px;
+}

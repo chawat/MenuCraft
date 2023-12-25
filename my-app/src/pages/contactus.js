@@ -6,17 +6,16 @@ import Navbar from "./navbar";
 function ContactUs() {
   return (
     <div>
+      <Navbar />
+      <div>
+        <header>
+          CONTACT US
+        </header>
 
-    <Navbar/>
-    <div>
-      <header>
-        <h1>CONTACT US</h1>
-      </header>
+        <Form />
 
-      <Form />
-
-      <footer></footer>
-    </div>
+        <footer></footer>
+      </div>
     </div>
   );
 }
