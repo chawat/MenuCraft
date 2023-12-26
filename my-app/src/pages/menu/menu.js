@@ -64,6 +64,11 @@ function Menu() {
       console.error('Error submitting order:', error);
     }
   };
+  const handleFormClear = () => {
+    
+
+    setOrder([]);
+  };
   const [menuList, setList]= useState([]);
   // const containerStyle = {
     
@@ -75,7 +80,7 @@ function Menu() {
   // };
   return (
     <div style={containerStylemenu} className='mainmenu' >
-    <form  onSubmit={handleFormSubmit}>
+    <form  >
   
     <h1>Welcome to the Menu, {username}!</h1> 
     
@@ -117,7 +122,7 @@ function Menu() {
 <div className="footermenu">
   <p>
     console.log(name)
-    <input type="reset" value="Clear"  />
+    <input type="reset" value="Clear" onClick={handleFormClear} />
     
 <Link to={{ pathname: '/Shop', search: `?name=${username}` }} className="create-your-own-link">
 <input type="submit"  value="addToCart" onClick={handleFormSubmit}/>
