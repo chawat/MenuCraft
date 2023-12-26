@@ -3,7 +3,7 @@ import "./menu.css";
 // import backgroundImage from '../images/backMenu.jpg';
 import { Link } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
-// import ClubSandwich from '../images/ClubSandwich.jpg'
+ import ClubSandwich from '../../images/ClubSandwich.jpg';
 // import Subs from '../images/Subs.jpg'
 // import HotDog from '../images/HotDogs.jpg'
 // import ChickenSandwich from '../images/chickenSandwich.jpg'
@@ -11,12 +11,13 @@ import { Link } from 'react-router-dom';
 // import Hamburger from '../images/hamburger.jpg'
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
-
+import backgroundmenu from "../../images/backMenu.jpg";
 
 
   
 
 function Menu() {
+  
   const location = useLocation();
   const [name, setName] = useState('');
   const username = new URLSearchParams(location.search).get('username');
@@ -45,7 +46,14 @@ function Menu() {
       }
     });
   };
+  const containerStylemenu = {
+    backgroundImage: `url(${backgroundmenu})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
 
+    
+  };
   const handleFormSubmit = () => {
     
 
@@ -65,21 +73,24 @@ function Menu() {
   //   backgroundRepeat: 'no-repeat',
   //   height: 'wrap content', 
   // };
-  return (<div>
-    <h1>Welcome to the Menu, {username}!</h1>
-    <form onSubmit={handleFormSubmit}>
+  return (
+    <div style={containerStylemenu} className='mainmenu' >
+    <form  onSubmit={handleFormSubmit}>
+  
+    {/* <h1>Welcome to the Menu, {username}!</h1> */}
+    
     setName(username);
       <input type="hidden" name="recipient" value="chalitahawat1@gmail.com" />
       console.log(name)
-      <div className="wrapper">
+       <div className="wrapper"> 
         <h1 className="header">All Menu</h1>
-      </div>
+      </div> 
       <div className='main-body'>
         <div className='content'>
 
           {menuList.map((item, index) => (
             <div key={index}>
-            <img className='c1' src={item.image} alt={item.image} />
+            <img src={item.image} alt={item.name} />
             {/* <img className='c1' src={require(`../images/${item.image}`).default} alt={item.name} /> */}
 
              <p>
@@ -103,7 +114,7 @@ function Menu() {
         </div>
       </div>
      
-<div className="footer">
+<div className="footermenu">
   <p>
     console.log(name)
     <input type="reset" value="Clear"  />
@@ -119,6 +130,8 @@ function Menu() {
 
 
 
+    
+    
     </form>
     </div>
   );

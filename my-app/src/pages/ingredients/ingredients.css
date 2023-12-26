@@ -6,7 +6,17 @@ body {
   padding: 0;
   background-color: #f5f5f5;
 }
-
+.mainingredient {
+  /* background-image: url('../../images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 15, 15); /* Adjust the text color based on your background image */
+}
 .container {
   display: flex;
   justify-content: space-around;

@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white; /* Adjust the text color based on your background image */
+  color: rgb(6, 6, 6); /* Adjust the text color based on your background image */
 }
 
 .content {
@@ -19,8 +19,9 @@
 .par {
   font-size: 24px;
   line-height: 1.5;
+  color: blue;
 }
 
 h1 span {
-  color: #ff6347; /* Add a color to the span in your h1 if desired */
+  color:blue; /* Add a color to the span in your h1 if desired */
 }

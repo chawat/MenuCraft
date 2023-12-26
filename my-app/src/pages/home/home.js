@@ -5,9 +5,16 @@ import backgroundImage from "../../images/background.png"
 
 function Home() {
   
-
+  const containerStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: 'wrap content', 
+    
+  };
   return (
-    <div>
+    <div style={containerStyle}>
     <div className="main" >
       <div className="content">
       <p className="par">

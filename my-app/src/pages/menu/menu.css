@@ -1,22 +1,36 @@
-/* menu.css */
 
-body {
+.body {
   font-family: 'Arial', sans-serif;
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: blueviolet;
+  margin-top: auto;
 }
+/* Add this to your existing CSS */
 
-.wrapper {
+.mainmenu {
+  /* background-image: url('../../images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 15, 15);
+  
+  
+}
+ .wrapper {
   background-color: #ff6347;
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
-}
+} 
 
-.header {
-  color: white;
+  .header {
+  color: rgb(16, 15, 15);
   margin: 0;
-}
+}  
 
 .main-body {
   display: flex;
@@ -34,9 +48,9 @@ body {
 }
 
 .c1 {
-  width: 300px;
+  width: calc(33.33% - 20px); 
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -49,27 +63,22 @@ body {
   margin-right: 10px;
 }
 
-.footer {
-  background-color: #ff6347;
-  padding: 20px;
-  text-align: center;
-}
 
-.footer p {
+ .footermenu p {
   margin: 0;
 }
 
-.footer input[type="reset"],
-.footer input[type="submit"] {
-  background-color: #fff;
-  color: #ff6347;
+.footermenu input[type="reset"],
+.footermenu input[type="submit"] {
+  background-color: #ff6347;
+  color: white;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
 }
 
-.footer input[type="reset"]:hover,
-.footer input[type="submit"]:hover {
-  background-color: #ddd;
+.footermenu input[type="reset"]:hover,
+.footermenu input[type="submit"]:hover {
+  background-color: #555;
 }

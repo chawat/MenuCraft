@@ -7,22 +7,23 @@ import Menu from './pages/menu/menu.js';
 import ContactUs from './pages/contactus/contactus.js';
 import Addtomenu from './pages/addtomenu/addtomenu.js';
 import Ingredients from './pages/ingredients/ingredients.js';
-import Shop from './pages/ingredients/Shop.js';
+import Shop from './pages/Shop/Shop.js';
 import Navbar from './pages/navbar/navbar.js';
 import backgroundImage from "./images/background.png"
 
 function App() {
-  const containerStyle = {
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: 'wrap content', 
+  // const containerStyle = {
+  //   backgroundImage: `url(${backgroundImage})`,
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  //   height: 'wrap content', 
     
-  };
+  // };
   return (
     <Router>
-    <div style={containerStyle}>
+    {/* <div style={containerStyle}> */}
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

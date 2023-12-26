@@ -5,6 +5,8 @@ import { PRODUCTS } from '../productsIng';
 import  '../../images/ketchup.jpg'; 
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import backgroundmenu from "../../images/backMenu.jpg";
+
 
 function Ingredients() {
   useEffect(()=>{
@@ -47,9 +49,16 @@ function Ingredients() {
     { name: 'ClubSandwich', price: 4.5, image: Tomato },
     { name: 'ClubSandwich', price: 4.5, image: Honey },
   ];*/
+  const containerStyle = {
+    backgroundImage: `url(${backgroundmenu})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
 
+    
+  };
   return (
-    <div>
+    <div style={containerStyle} className='mainingredient'>
       {/* <Navbar /> */}
       <form method='post' action='chalitahawat1@gmail.com'>
           <input type='hidden' name='recipient' value='chalitahawat1@gmail.com' />
@@ -73,7 +82,7 @@ function Ingredients() {
                     defaultValue="0" 
                   />
                 </label>
-                <button>Add</button>
+               
               </p>
               
             </div>
@@ -93,37 +102,6 @@ function Ingredients() {
               <input type='submit' value='Add To Menu!' />
             </Link>
           </p>
-
-          <div>
-            {/* Display the count */}
-            <div className="indicator">
-              <span className="indicator-item badge badge-secondary">
-                {renderCount}
-              </span>
-              <button className="btn">inbox</button>
-            </div>
-
-            {/* Button to open the modal */}
-            <button className='btn' onClick={openModal}>
-              Open Modal
-            </button>
-
-            {/* Modal */}
-            {isModalOpen && (
-              <div className='modal-overlay'>
-                <div className='modal-box'>
-                  <h3 className='font-bold text-lg'>Hello!</h3>
-                  <p className='py-4'>Press ESC key or click the button below to close</p>
-                  <div className='modal-action'>
-                    {/* Close button */}
-                    <button className='btn' onClick={closeModal}>
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
         
       </div>
       </form>

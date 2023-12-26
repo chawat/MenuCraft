@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import backgroundImagee from "../../images/background.png";
 
 function Login() {
+  const containerStylelogin = {
+    backgroundImage: `url(${backgroundImagee})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: 'wrap content', 
+    
+  };
   const [isPasswordHidden, setPasswordHidden] = useState(true);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -16,8 +25,8 @@ function Login() {
   };
 
   return (
-    <div>
-      <div className="form">
+    <div style={containerStylelogin} className="mainlogin">
+      <div className="form" >
         <h1>LOGIN HERE</h1>
         <div>
           <label htmlFor="username">Username</label>
@@ -55,7 +64,7 @@ function Login() {
         Don't have an account <br />
         <a href="#">Sign up </a>here
       </p>
-      <p className="liw">Log in with</p>
+      
 
       
     </div>
