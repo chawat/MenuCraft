@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "../styles/login.css";
+import "./login.css";
 import { Link } from 'react-router-dom';
-import backgroundImage from '../images/backghome.jpg';
-import Navbar from "./navbar/navbar";
 import Axios from 'axios';
 
 function Login() {
@@ -19,7 +17,6 @@ function Login() {
 
   return (
     <div>
-      {/* <Navbar /> */}
       <div className="form">
         <h1>LOGIN HERE</h1>
         <div>

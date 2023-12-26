@@ -1,13 +1,12 @@
 import React from 'react';
 import Formadd from './formadd';
-import '../styles/addyouritem.css';
-import Navbar from "./navbar/navbar";
+import './addyouritem.css';
 
 function Addtomenu() {
   return (
     <div>
 
-    <Navbar/>
+    
     <div>
       <header>
         <h1>ADD YOUR ITEM TO MENU</h1>
