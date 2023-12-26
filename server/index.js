@@ -149,7 +149,7 @@ app.post("/api/insert", (req, res)=>{
      //const s="INSERT INTO user(name,password,isAdmin) VALUES (?,?,0);"
      const s="INSERT INTO user(name,password,isAdmin) VALUES (?,?,0);"
      db.query(s,[name, pass],(err,result)=>{
-    
+  
     
      });
 });
