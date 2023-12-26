@@ -7,6 +7,7 @@ import Menu from './pages/menu.js';
 import ContactUs from './pages/contactus.js';
 import Addtomenu from './pages/addtomenu.js';
 import Ingredients from './pages/ingredients/ingredients.js';
+import Shop from './pages/ingredients/Shop.js';
 
 function App() {
   
@@ -22,7 +23,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs/>} />
           <Route path="/ingredients" element={<Ingredients/>} />
           <Route path="/addtomenu" element={<Addtomenu/>} />
-          {/* <Route path="/ChosenItems" element={<ChosenItems/>}/> */}
+          <Route path="/Shop" element={<Shop/>}/> 
         </Routes>
       {/* </Layout> */}
     </Router>

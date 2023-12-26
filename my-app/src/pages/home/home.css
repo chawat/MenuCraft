@@ -162,9 +162,10 @@ h1 span {
     margin-top: auto;
 }
 .content .par{
-    padding-left: 26em;
+    /* padding-left: 26em; */
     /* padding-top: 25px; */
     font-family: Arial;
+    text-align: center;
     letter-spacing: 1.2px;
     line-height: 30px;
 }

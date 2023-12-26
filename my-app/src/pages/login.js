@@ -32,6 +32,7 @@ function Login() {
               id="username"
               onChange={(e) => { setName(e.target.value); }}
             />
+
           </div>
         </div>
       <div>
@@ -50,32 +51,22 @@ function Login() {
         </div >
 
       
-      <input type="submit" name="" value="LOGIN" onClick={submitR} />
+        <Link to={{ pathname: '/menu', search: `?username=${name}` }} className="create-your-own-link">
+  <input type="submit" name="" value="LOGIN" onClick={submitR} />
+</Link>
       <p className="link">
         Don't have an account <br />
         <a href="#">Sign up </a>here
       </p>
       <p className="liw">Log in with</p>
-      <div className="icons">
-        <a href="www.facebook.com">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <a href="www.instagram.com">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-        <a href="www.twitter.com">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a href="www.google.com.com">
-          <ion-icon name="logo-google"></ion-icon>
-        </a>
-        <a href="www.skype.com">
-          <ion-icon name="logo-skype"></ion-icon>
-        </a>
-      </div>
+
+      
     </div>
     </div>
   );
 }
 
 export default Login;
+
+
+

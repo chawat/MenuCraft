@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './ingredients.css';
 import Navbar from '../navbar';
 import { PRODUCTS } from '../productsIng';
-/* import Ketchup from '../images/ketchup.jpg';
-import Honey from '../images/honey.jpg';
-import Lettuce from '../images/lettuce.jpg';
-import Cheese from '../images/cheese.jpg';
-import Bacon from '../images/bacon.jpg';
-import CheeseDip from '../images/CheeseDip.jpg';
-import Meat from '../images/meat.jpg';
-import Tomato from '../images/tomato.jpg'; */
+import  '../../images/ketchup.jpg'; 
 import { Link, useNavigate } from 'react-router-dom';
-
+import Axios from 'axios';
 
 function Ingredients() {
+  useEffect(()=>{
+    Axios.get('http://localhost:3001/api/getIngredient').then((response)=>{
+      setList(response.data);
+      console.log(response.data);
+    });
+  }, []);
+
+  const [ingredientList, setList]= useState([]);
   const navigate = useNavigate();
   const [renderCount, setRenderCount] = useState(0);
 
@@ -56,11 +57,11 @@ function Ingredients() {
       <div className='main-body'>
         <div className='content'>
 
-          {PRODUCTS.map((item, index) => (
+          {ingredientList.map((item, index) => (
             <div key={index}>
               <img className='c1' src={item.image} alt={item.name} />
               <p>
-                {item.name} {item.price}$ <br />
+                {item.name} {item.quantity} {item.price}$ <br />
                 <label>
                   
                   <input
