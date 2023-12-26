@@ -1,0 +1,43 @@
+/* navbar.css */
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    color: white;
+    margin: 0;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #ff6347; /* Add a hover color based on your design preference */
+  }
+  

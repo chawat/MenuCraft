@@ -1,7 +1,7 @@
 import React from 'react';
 import Formadd from './formadd';
 import '../styles/addyouritem.css';
-import Navbar from "./navbar";
+import Navbar from "./navbar/navbar";
 
 function Addtomenu() {
   return (

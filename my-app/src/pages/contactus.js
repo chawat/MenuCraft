@@ -1,12 +1,12 @@
 import React from 'react';
 import Form from './form';
 import '../styles/contactus.css';
-import Navbar from "./navbar";
+import Navbar from "./navbar/navbar";
 
 function ContactUs() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div>
         <header>
           CONTACT US

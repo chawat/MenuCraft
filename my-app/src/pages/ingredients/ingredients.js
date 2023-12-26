@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import './ingredients.css';
-import Navbar from '../navbar';
+import Navbar from '../navbar/navbar';
 import { PRODUCTS } from '../productsIng';
 import  '../../images/ketchup.jpg'; 
 import { Link, useNavigate } from 'react-router-dom';
@@ -50,7 +50,7 @@ function Ingredients() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <form method='post' action='chalitahawat1@gmail.com'>
           <input type='hidden' name='recipient' value='chalitahawat1@gmail.com' />
 

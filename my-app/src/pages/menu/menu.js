@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
- import "../styles/menu.css";
-import Navbar from "./navbar";
-
-import backgroundImage from '../images/backMenu.jpg';
+import "./menu.css";
+// import backgroundImage from '../images/backMenu.jpg';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import ClubSandwich from '../images/ClubSandwich.jpg'
-import Subs from '../images/Subs.jpg'
-import HotDog from '../images/HotDogs.jpg'
-import ChickenSandwich from '../images/chickenSandwich.jpg'
-import SwissMushroom from '../images/swissMushroom.jpg'
-import Hamburger from '../images/hamburger.jpg'
+// import { useHistory } from 'react-router-dom';
+// import ClubSandwich from '../images/ClubSandwich.jpg'
+// import Subs from '../images/Subs.jpg'
+// import HotDog from '../images/HotDogs.jpg'
+// import ChickenSandwich from '../images/chickenSandwich.jpg'
+// import SwissMushroom from '../images/swissMushroom.jpg'
+// import Hamburger from '../images/hamburger.jpg'
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
@@ -59,18 +57,15 @@ function Menu() {
     }
   };
   const [menuList, setList]= useState([]);
-  const containerStyle = {
+  // const containerStyle = {
     
-    backgroundImage: `url(${backgroundImage})`,
-    // backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: 'wrap content', // Set your desired height
-    // You can add more styles as needed
-  };
+  //   backgroundImage: `url(${backgroundImage})`,
+    
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  //   height: 'wrap content', 
+  // };
   return (<div>
-
-    <Navbar/>
     <h1>Welcome to the Menu, {username}!</h1>
     <form onSubmit={handleFormSubmit}>
     setName(username);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Navbar from "../navbar";
+import Navbar from "../navbar/navbar";
 
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ function Shop() {
 
   return (<div>
 
-    <Navbar/>
+    {/* <Navbar/> */}
     
     <form onSubmit={handleFormSubmit}>
       

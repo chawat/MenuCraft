@@ -1,6 +1,6 @@
 // Navbar.js
 import React from 'react';
-import "../styles/navbar.css";
+import "./navbar.css";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
           <li><Link to="/ingredients">INGREDIENTS</Link></li>
           <li><Link to="/login">LOGIN</Link></li>
           <li><Link to="/contactus">CONTACT US</Link></li>
-          <li><Link to="/shop">SHOP</Link></li>
+          {/* <li><Link to="/shop">SHOP</Link></li> */}
         </ul>
       </div>
     </div>
