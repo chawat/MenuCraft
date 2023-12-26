@@ -77,7 +77,7 @@ function Menu() {
     <div style={containerStylemenu} className='mainmenu' >
     <form  onSubmit={handleFormSubmit}>
   
-    {/* <h1>Welcome to the Menu, {username}!</h1> */}
+    <h1>Welcome to the Menu, {username}!</h1> 
     
     setName(username);
       <input type="hidden" name="recipient" value="chalitahawat1@gmail.com" />
