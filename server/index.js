@@ -74,20 +74,87 @@ app.post('/api/addOrder', (req, res) => {
         const now = moment().format('YYYY-MM-DD HH:mm:ss'); // current date and time
   
         // Insert into the orderfrommenu table
-        const insertOrderQuery = `INSERT INTO orderfrommenu (userId, menuId, orderDATE, quantity) VALUES (?, ?, ?, ?)`;
-        db.query(insertOrderQuery, [userId, idmenu, now, quantity], (err, result) => {
-          if (err) {
-            console.error('Error inserting order:', err);
-            res.sendStatus(500); // Internal Server Error
-            return;
-          }
-          console.log(`Order for menuId ${idmenu} inserted successfully.`);
-        });
+        if(quantity!=0){
+          const insertOrderQuery = `INSERT INTO orderfrommenu (userId, menuId, orderDATE, quantity) VALUES (?, ?, ?, ?)`;
+          db.query(insertOrderQuery, [userId, idmenu, now, quantity], (err, result) => {
+            if (err) {
+              console.error('Error inserting order:', err);
+              res.sendStatus(500); // Internal Server Error
+              return;
+            }
+            console.log(`Order for menuId ${idmenu} inserted successfully.`);
+          });
+        }
+        
       });
     });
   
     res.sendStatus(200);
   });
+
+
+
+  app.post('/api/addOrderIngredient', (req, res) => {
+    
+
+    const order = req.body.order;
+    console.log(order);
+    const username = req.body.username;
+    const number = req.body.number;
+    console.log(number);
+    console.log(username);
+
+    // Function to get user ID based on the username
+    const getUserId = (callback) => {
+      const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
+      db.query(getUserIdQuery, [username], (err, userResult) => {
+        if (err) {
+          console.error('Error fetching userId:', err);
+          res.sendStatus(500); // Internal Server Error
+          return;
+        }
+        if (userResult.length === 0) {
+          console.error('User not found');
+          res.sendStatus(404); // User not found
+          return;
+        }
+        const userId = userResult[0].iduser;
+        callback(userId);
+      });
+    };
+  
+    // Map through the orders and insert them into the database
+    order.forEach(async (item) => {
+      const { idingredient, quantity } = item;
+  
+      // Get the user ID
+      getUserId((userId) => {
+        // Add logic to insert the order data into your database
+        console.log('Received username:', username);
+        console.log('Received userId:', userId);
+    
+        if(quantity!=0){
+          const insertOrderQuery = `INSERT INTO orderfroming (number,iduser, idingredient, quantity) VALUES (?, ?, ?, ?)`;
+        db.query(insertOrderQuery, [number,userId, idingredient, quantity], (err, result) => {
+          if (err) {
+            console.error('Error inserting order:', err);
+            res.sendStatus(500); // Internal Server Error
+            return;
+          }
+        });
+        }
+        
+      });
+    });
+  
+    res.sendStatus(200);
+  });
+
+
+
+
+
+
 
 
   app.post('/api/orderItems', async (req, res) => {
@@ -109,7 +176,7 @@ app.post('/api/addOrder', (req, res) => {
       const userId = userResult[0].iduser;
   
       // Now you can use userId to query menu items
-      const getMenuQuery = 'SELECT menu.name, menu.price, orderfrommenu.quantity FROM orderfrommenu JOIN menu ON menu.idmenu = orderfrommenu.menuId WHERE orderfrommenu.userId = ?;';
+      const getMenuQuery = 'SELECT menu.name, menu.price, orderfrommenu.quantity FROM orderfrommenu JOIN menu ON menu.idmenu = orderfrommenu.menuId WHERE orderfrommenu.userId = ? AND orderfrommenu.status= "Pending" UNION SELECT orderfroming.number, ingredient.name, ingredient.price, SUM(orderfroming.quantity) as totalQuantity FROM orderfroming JOIN ingredient ON ingredient.idingredient = orderfroming.idingredient WHERE orderfroming.iduser = ? AND orderfroming.status = "pending" GROUP BY orderfroming.number';
       db.query(getMenuQuery, [userId], (err, result) => {
         if (err) {
           console.error('Error fetching menu items:', err);

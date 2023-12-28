@@ -84,9 +84,9 @@ function Menu() {
   
     <h1>Welcome to the Menu, {username}!</h1> 
     
-    setName(username);
+   
       <input type="hidden" name="recipient" value="chalitahawat1@gmail.com" />
-      console.log(name)
+      
        <div className="wrapper"> 
         <h1 className="header">All Menu</h1>
       </div> 
@@ -121,14 +121,15 @@ function Menu() {
      
 <div className="footermenu">
   <p>
-    console.log(name)
+   
     <input type="reset" value="Clear" onClick={handleFormClear} />
     
 <Link to={{ pathname: '/Shop', search: `?name=${username}` }} className="create-your-own-link">
 <input type="submit"  value="addToCart" onClick={handleFormSubmit}/>
 </Link>
-    <Link to="/ingredients" className="create-your-own-link">
-      <input type="submit" value="Create your own!" />
+    
+    <Link to={{ pathname: '/ingredients', search: `?username=${username}` }} className="create-your-own-link">
+      <input type="submit" value="Create your own!" onClick={handleFormSubmit} />
     </Link>
   </p>
 </div>
