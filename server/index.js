@@ -153,7 +153,38 @@ app.post('/api/addOrder', (req, res) => {
 
 
 
+  app.post('/api/orderItemsIngredients', async (req, res) => {
+    const username = req.body.name;
 
+    const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
+    db.query(getUserIdQuery, [username], (err, userResult) => {
+      if (err) {
+        console.error('Error fetching userId:', err);
+        res.sendStatus(500); // Internal Server Error
+        return;
+      }
+      if (userResult.length === 0) {
+        console.error('User not found');
+        res.sendStatus(404); // User not found
+        return;
+      }
+  
+      const userId = userResult[0].iduser;
+  
+      // Now you can use userId to query menu items
+      const getMenuQuery = 'SELECT ingredient.name, ingredient.price, orderfroming.quantity,ingredient.quantity AS qu, orderfroming.number FROM orderfroming JOIN ingredient ON ingredient.idingredient = orderfroming.idingredient WHERE orderfroming.iduser = ? AND orderfroming.status= "pending" ';
+      db.query(getMenuQuery, [userId], (err, result) => {
+        
+        if (err) {
+          console.error('Error fetching menu items:', err);
+          res.sendStatus(500); // Internal Server Error
+        } else {
+          console.log('Menu items:', result);
+          res.send(result);
+        }
+      });
+    });
+  });
 
 
 
@@ -176,8 +207,9 @@ app.post('/api/addOrder', (req, res) => {
       const userId = userResult[0].iduser;
   
       // Now you can use userId to query menu items
-      const getMenuQuery = 'SELECT menu.name, menu.price, orderfrommenu.quantity FROM orderfrommenu JOIN menu ON menu.idmenu = orderfrommenu.menuId WHERE orderfrommenu.userId = ? AND orderfrommenu.status= "Pending" UNION SELECT orderfroming.number, ingredient.name, ingredient.price, SUM(orderfroming.quantity) as totalQuantity FROM orderfroming JOIN ingredient ON ingredient.idingredient = orderfroming.idingredient WHERE orderfroming.iduser = ? AND orderfroming.status = "pending" GROUP BY orderfroming.number';
+      const getMenuQuery = 'SELECT menu.name, menu.price, orderfrommenu.quantity FROM orderfrommenu JOIN menu ON menu.idmenu = orderfrommenu.menuId WHERE orderfrommenu.userId = ? AND orderfrommenu.status= "Pending" ';
       db.query(getMenuQuery, [userId], (err, result) => {
+        
         if (err) {
           console.error('Error fetching menu items:', err);
           res.sendStatus(500); // Internal Server Error
