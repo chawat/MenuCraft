@@ -8,7 +8,12 @@ function Shop() {
   const [ingList, setIngList] = useState([]);
   const name = new URLSearchParams(location.search).get('name');
   console.log(name);
-
+  const submitR = () => {
+    Axios.post('http://localhost:3001/api/setOrdered', { username: name })
+      .then(() => {
+        alert('Successful insert');
+      });
+  };
   useEffect(() => {
     Axios.post('http://localhost:3001/api/orderItems', { name }).then((response) => {
       setList(response.data);
@@ -52,7 +57,9 @@ function Shop() {
         <br/>
         <div className="footer">
           <p>
-            <input type="submit" value="Submit" />
+          <Link to={{ pathname: '/' }} className="create-your-own-link">
+  <input type="submit" value="Submit" onClick={submitR} />
+  </Link>
           </p>
         </div>
       </form>

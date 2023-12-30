@@ -153,6 +153,76 @@ app.post('/api/addOrder', (req, res) => {
 
 
 
+  app.post('/api/setOrdered', (req, res) => {
+    
+
+  
+    const username = req.body.username;
+    
+    console.log("HAWAT:::"+username);
+
+    // Function to get user ID based on the username
+    const getUserId = (callback) => {
+      const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
+      db.query(getUserIdQuery, [username], (err, userResult) => {
+        if (err) {
+          console.error('Error fetching userId:', err);
+          res.sendStatus(500); // Internal Server Error
+          return;
+        }
+        if (userResult.length === 0) {
+          console.error('User not found');
+          res.sendStatus(404); // User not found
+          return;
+        }
+        const userId = userResult[0].iduser;
+        callback(userId);
+      });
+    };
+  
+    // Map through the orders and insert them into the database
+    
+  
+      // Get the user ID
+      getUserId((userId) => {
+        // Add logic to insert the order data into your database
+        console.log('Received username:', username);
+        console.log('Received userId:', userId);
+    
+        
+          const insertOrderQuery = `UPDATE orderfrommenu
+          SET status = 'ordered'
+          WHERE status = 'Pending' AND userId = ?;
+          `;
+        db.query(insertOrderQuery, [userId], (err, result) => {
+          if (err) {
+            console.error('Error inserting order:', err);
+            res.sendStatus(500); // Internal Server Error
+            return;
+          }
+        });
+
+        const changeingredient = `UPDATE orderfroming
+          SET status = 'ordered'
+          WHERE status = 'pending' AND iduser = ?;
+          `;
+        db.query(changeingredient, [userId], (err, result) => {
+          if (err) {
+            console.error('Error inserting order:', err);
+            res.sendStatus(500); // Internal Server Error
+            return;
+          }
+        });
+        
+        
+      });
+    
+  
+    res.sendStatus(200);
+  });
+
+
+
   app.post('/api/orderItemsIngredients', async (req, res) => {
     const username = req.body.name;
 
