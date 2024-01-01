@@ -2,6 +2,7 @@ const express = require ('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const moment = require('moment');
+const bcrypt = require('bcrypt');
 const app= express();
 const mysql= require('mysql');
 const db= mysql.createPool({
@@ -256,6 +257,53 @@ app.post('/api/addOrder', (req, res) => {
     });
   });
 
+  app.post("/api/addToMenu", (req, res)=>{
+
+
+    const name=req.body.name
+    const email=req.body.email
+    const description=req.body.description
+    const username=req.body.username
+
+    const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
+    db.query(getUserIdQuery, [username], (err, userResult) => {
+      if (err) {
+        console.error('Error fetching userId:', err);
+        res.sendStatus(500); // Internal Server Error
+        return;
+      }
+      if (userResult.length === 0) {
+        console.error('User not found');
+        res.sendStatus(404); // User not found
+        return;
+      }
+
+      const userId = userResult[0].iduser;
+  
+     const s="INSERT INTO addtomenu(iduser,recipeName,description,email) VALUES (?,?,?,?);"
+     db.query(s,[userId, name,description,email],(err,result)=>{
+    
+     });
+     });
+});
+
+
+
+app.post("/api/contact", (req, res)=>{
+
+
+  const name=req.body.name
+  const email=req.body.email
+  const message=req.body.message
+
+  
+   const s="INSERT INTO contact(username,email, message) VALUES (?,?,?);"
+   db.query(s,[ name,email, message],(err,result)=>{
+  
+   });
+   });
+
+
 
 
   app.post('/api/orderItems', async (req, res) => {
@@ -308,20 +356,30 @@ app.get('/api/getIemById/:menuId', async (req, res) => {
     });
   });
   
-  
+
 
 app.post("/api/insert", (req, res)=>{
 
 
     const name=req.body.name
     const pass=req.body.password
+    bcrypt.hash(pass, 10, (err, hash) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+      console.log(hash);
+   
+
      //const s="INSERT INTO user(name,password,isAdmin) VALUES (?,?,0);"
      const s="INSERT INTO user(name,password,isAdmin) VALUES (?,?,0);"
-     db.query(s,[name, pass],(err,result)=>{
-  
+     db.query(s,[name, hash],(err,result)=>{
     
      });
 });
+});
+
 app.listen(3001, ()=>{
     console.log("hello");
 });

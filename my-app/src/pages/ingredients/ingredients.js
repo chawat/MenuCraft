@@ -6,7 +6,14 @@ import  '../../images/ketchup.jpg';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Axios from 'axios';
 import backgroundmenu from "../../images/backMenu.jpg";
-
+import Ketchup from '../../images/ketchup.jpg';
+import Honey from '../../images/honey.jpg';
+import Lettuce from '../../images/lettuce.jpg';
+import Cheese from '../../images/cheese.jpg';
+import Bacon from '../../images/bacon.jpg';
+import CheeseDip from '../../images/CheeseDip.jpg';
+import Meat from '../../images/meat.jpg';
+import Tomato from '../../images/tomato.jpg';
 
 function Ingredients() {
   const location = useLocation();
@@ -98,14 +105,28 @@ function Ingredients() {
   return (
     <div style={containerStyle} className='mainingredient'>
       {/* <Navbar /> */}
+      
       <form >
-
+      <h1>Welcome to the Ingredients, {username}!</h1> 
+      <div className="wrapper"> 
+        <h1 className="header">All Ingredients</h1>
+      </div> 
       <div className='main-body'>
+      
         <div className='content'>
 
           {ingredientList.map((item, index) => (
             <div key={index}>
-              <img className='c1' src={item.image} alt={item.name} />
+              {/* <img className='c1' src={item.image} alt={item.name} /> */}
+
+              {item.image === 'Honey' && <img className='hyp' src={Honey} alt={item.name} />}
+              {item.image === 'Ketchup' && <img className='hyp' src={Ketchup} alt={item.name} />}
+              {item.image === 'Lettuce' && <img className='hyp' src={Lettuce} alt={item.name} />}
+              {item.image === 'Cheese' && <img className='hyp' src={Cheese} alt={item.name} />}
+              {item.image === 'Bacon' && <img className='hyp' src={Bacon} alt={item.name} />}
+              {item.image === 'CheeseDip' && <img className='hyp' src={CheeseDip} alt={item.name} />}
+              {item.image === 'Meat' && <img className='hyp' src={Meat} alt={item.name} />}
+              {item.image === 'Tomato' && <img className='hyp' src={Tomato} alt={item.name} />}
               <p>
                 {item.name} {item.quantity} {item.price}$ <br />
                 <label>
@@ -142,7 +163,7 @@ function Ingredients() {
             <Link to={{ pathname: '/Shop', search: `?name=${username}` }} className="create-your-own-link">
             <input type='submit' value='Submit' onClick={handleFormSubmit} />
             </Link>
-            <Link to='/addtomenu' className='create-your-own-link'>
+            <Link to={{ pathname: '/addtomenu', search: `?username=${username}` }} className='create-your-own-link'>
               <input type='submit' value='Add To Menu!' />
             </Link>
           </p>

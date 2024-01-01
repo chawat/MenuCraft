@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import "./menu.css";
 // import backgroundImage from '../images/backMenu.jpg';
 import { Link } from 'react-router-dom';
-// import { useHistory } from 'react-router-dom';
- import ClubSandwich from '../../images/ClubSandwich.jpg';
-// import Subs from '../images/Subs.jpg'
-// import HotDog from '../images/HotDogs.jpg'
-// import ChickenSandwich from '../images/chickenSandwich.jpg'
-// import SwissMushroom from '../images/swissMushroom.jpg'
-// import Hamburger from '../images/hamburger.jpg'
+import { useHistory } from 'react-router-dom';
+import ClubSandwich from '../../images/ClubSandwich.jpg'
+import Subs from '../../images/Subs.jpg'
+import HotDog from '../../images/HotDogs.jpg'
+import ChickenSandwich from '../../images/chickenSandwich.jpg'
+import SwissMushroom from '../../images/swissMushroom.jpg'
+import Hamburger from '../../images/hamburger.jpg'
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
-import backgroundmenu from "../../images/backMenu.jpg";
+import backgroundmenu from '../../images/backMenu.jpg';
 
 
   
@@ -95,9 +95,12 @@ function Menu() {
 
           {menuList.map((item, index) => (
             <div key={index}>
-            <img src={item.image} alt={item.name} />
-            {/* <img className='c1' src={require(`../images/${item.image}`).default} alt={item.name} /> */}
-
+            {item.image === 'ClubSandwich' && <img className='hyp' src={ClubSandwich} alt={item.name} />}
+    {item.image === 'Subs' && <img className='hyp' src={Subs} alt={item.name} />}
+    {item.image === 'HotDog' && <img className='hyp' src={HotDog} alt={item.name} />}
+    {item.image === 'ChickenSandwich' && <img className='hyp' src={ChickenSandwich} alt={item.name} />}
+    {item.image === 'SwissMushroom' && <img className='hyp' src={SwissMushroom} alt={item.name} />}
+    {item.image === 'Hamburger' && <img className='hyp' src={Hamburger} alt={item.name} />}
              <p>
                 {item.name} {item.price}$ <br />
                 <label>

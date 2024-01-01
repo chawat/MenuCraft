@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Axios from 'axios';
-
+import "./shop.css";
 function Shop() {
   const location = useLocation();
   const [ingList, setIngList] = useState([]);
