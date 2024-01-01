@@ -1,10 +1,10 @@
-const express = require ('express');
-const bodyParser = require('body-parser');
+const express = require ('express'); //path
+const bodyParser = require('body-parser'); //to send data from and to 
 const cors = require('cors');
-const moment = require('moment');
-const bcrypt = require('bcrypt');
+const moment = require('moment'); //time
+const bcrypt = require('bcrypt'); //hash
 const app= express();
-const mysql= require('mysql');
+const mysql= require('mysql'); //connection
 const db= mysql.createPool({
     host:'localhost',
     user:'root',
@@ -306,7 +306,7 @@ app.post("/api/contact", (req, res)=>{
 
 
 
-  app.post('/api/orderItems', async (req, res) => {
+  app.post('/api/orderItems', async (req, res) => { //for menu to insert into shop
     const username = req.body.name;
   
     const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
@@ -340,21 +340,21 @@ app.post("/api/contact", (req, res)=>{
   });
   
 
-app.get('/api/getIemById/:menuId', async (req, res) => {
-    const menuId = req.params.menuId;
-  console.log(menuId);
-    const getMenuItemQuery = 'SELECT * FROM menu WHERE idmenu = ?';
+  // app.get('/api/getIemById/:menuId', async (req, res) => {
+  //   const menuId = req.params.menuId;
+  // console.log(menuId);
+  //   const getMenuItemQuery = 'SELECT * FROM menu WHERE idmenu = ?';
   
-    db.query(getMenuItemQuery, [menuId], (err, result) => {
-      if (err) {
-        console.error('Error fetching menu item:', err);
-        res.sendStatus(500); // Internal Server Error
-        return;
-      }
+  //   db.query(getMenuItemQuery, [menuId], (err, result) => {
+  //     if (err) {
+  //       console.error('Error fetching menu item:', err);
+  //       res.sendStatus(500); 
+  //       return;
+  //     }
   
-      res.send(result);
-    });
-  });
+  //     res.send(result);
+  //   });
+  // });
   
 
 
