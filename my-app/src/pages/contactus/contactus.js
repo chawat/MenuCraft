@@ -31,18 +31,18 @@ function ContactUs() {
     
     <div  className='formcontact'>
       
-        <header>
+        <header className="usernn">
           CONTACT US
         </header>
 
       <p>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="usernn">Name:</label>
       </p>
       <input type="text" id="name" name="name" placeholder="Name"       onChange={(e) => { setName(e.target.value); }}
 required />
 
       <p>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email" className="usernn">Email:</label>
       </p>
       <input type="email" id="email" name="email" 
       placeholder="info@example.com" required 
@@ -50,7 +50,7 @@ required />
       />
 
       <p>
-        <label htmlFor="message">Message:</label>
+        <label htmlFor="message" className="usernn">Message:</label>
       </p>
       <textarea id="message" name="message" placeholder="Your message"
        required       onChange={(e) => { setMessage(e.target.value); }}

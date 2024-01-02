@@ -56,7 +56,10 @@ function Addtomenu() {
 
      
 
-      <button type="submit" onClick={submitR}>Add To Menu</button>
+
+      <Link to={{ pathname: '/ingredients', search: `?username=${username}` }} className='create-your-own-link'>
+              <input type='submit' onClick={submitR} value={'Add To Menu'} />
+            </Link>
     </form>
       
 

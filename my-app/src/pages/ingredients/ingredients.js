@@ -161,7 +161,7 @@ function Ingredients() {
             <input type='reset' value='Save and create another sandwish' onClick={handleFormSubmit}/>
             </Link>
             <Link to={{ pathname: '/Shop', search: `?name=${username}` }} className="create-your-own-link">
-            <input type='submit' value='Submit' onClick={handleFormSubmit} />
+            <input type='submit' value="addToCart" onClick={handleFormSubmit} />
             </Link>
             <Link to={{ pathname: '/addtomenu', search: `?username=${username}` }} className='create-your-own-link'>
               <input type='submit' value='Add To Menu!' />

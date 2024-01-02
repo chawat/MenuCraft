@@ -29,7 +29,7 @@ function Login() {
       <div className="form" >
         <h1>LOGIN HERE</h1>
         <div>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username" className="usernn">Username</label>
           <div>
             <input
               type="text"
@@ -42,7 +42,7 @@ function Login() {
           </div>
         </div>
       <div>
-          <label> Password</label>
+          <label className="usernn"> Password</label>
             <div className="password-container">
                 <input
                     type={isPasswordHidden ? "password" : "text"}
