@@ -380,6 +380,68 @@ app.post("/api/insert", (req, res)=>{
 });
 });
 
+
+
+
+app.post('/api/usernameExist', async (req, res) => {
+  const username = req.body.name;
+console.log(username);
+  const getUserIdQuery = 'SELECT iduser FROM user WHERE name = ?';
+  db.query(getUserIdQuery, [username], (err, userResult) => {
+    if (err) {
+      console.error('Error fetching userId:', err);
+      res.sendStatus(500); // Internal Server Error
+      return;
+    }
+    else{
+      console.log(userResult.length);
+
+      res.send({ exists: userResult.length > 0 });
+    }
+  
+
+  });
+});
+
+
+app.post('/api/userExist', async (req, res) => {
+  const username = req.body.name;
+  const password = req.body.password;
+
+  const getUserIdQuery = 'SELECT iduser, password FROM user WHERE name = ?';
+  db.query(getUserIdQuery, [username], async (err, userResult) => {
+    if (err) {
+      console.error('Error fetching user:', err);
+      res.sendStatus(500); // Internal Server Error
+      return;
+    }
+
+    if (userResult.length > 0) {
+      // User found, now compare hashed passwords
+      const hashedPasswordInDB = userResult[0].password;
+
+      try {
+        const passwordMatch = await bcrypt.compare(password, hashedPasswordInDB);
+
+        if (passwordMatch) {
+          // Passwords match, user exists
+          res.send({ exists: true });
+        } else {
+          // Passwords do not match, user does not exist
+          res.send({ exists: false });
+        }
+      } catch (compareError) {
+        console.error('Error comparing passwords:', compareError);
+        res.sendStatus(500); // Internal Server Error
+      }
+    } else {
+      // User not found
+      
+      res.send({ exists: false });
+    }
+  });
+});
+
 app.listen(3001, ()=>{
     console.log("hello");
 });

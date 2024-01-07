@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
@@ -6,6 +6,7 @@ import backgroundImagee from "../../images/background.png";
 
 function Login() {
   const containerStylelogin = {
+    
     backgroundImage: `url(${backgroundImagee})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -13,15 +14,73 @@ function Login() {
     height: 'wrap content', 
     
   };
+  
   const [isPasswordHidden, setPasswordHidden] = useState(true);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const submitR = () => {
-    Axios.post('http://localhost:3001/api/insert', { name: name, password: password })
+
+    Axios.post('http://localhost:3001/api/userExist', { name: name, password: password })
+      .then((response) => {
+        if(response.data.exists!=false){
+          console.log(response.data);
+  
+          
+        console.log(response.data);
+        window.location.href = `/menu?username=${encodeURIComponent(name)}`;
+        }
+        else{
+          console.log(response.data);
+          Axios.post('http://localhost:3001/api/usernameExist', { name: name}).then((response)=>{
+      console.log(response.data.exists);
+
+      
+      if(response.data.exists==false){
+        console.log(response.data);
+        
+        alert("username does not exist ");
+      }
+      else{
+        alert("wrong  password ");
+      }
+
+    });
+        }
+      });
+
+  };
+
+  const submitR1 = ()=>{
+    console.log("hi");
+    Axios.post('http://localhost:3001/api/usernameExist', { name: name}).then((response)=>{
+      console.log(response.data.exists);
+
+      
+      if(response.data.exists==false){
+        if(name==''){
+          alert('you should include username');
+
+        }
+        else{
+
+        
+        console.log(response.data);
+
+        Axios.post('http://localhost:3001/api/insert', { name: name, password: password })
       .then(() => {
         alert('Successful insert');
+        
       });
+      console.log(response.data);
+      window.location.href = `/menu?username=${encodeURIComponent(name)}`;
+    }
+      }
+      else{
+        alert("username already exist, use another one ");
+      }
+
+    });
   };
 
   return (
@@ -36,6 +95,7 @@ function Login() {
               placeholder="Username"
               name="name"
               id="username"
+              required
               onChange={(e) => { setName(e.target.value); }}
             />
 
@@ -57,16 +117,11 @@ function Login() {
         </div >
 
       
-        <Link to={{ pathname: '/menu', search: `?username=${name}` }} className="create-your-own-link">
+        {/* <Link to={{ pathname: '/menu', search: `?username=${name}` }} className="create-your-own-link"> */}
+  <input type="submit" name="" value="REGISTER" onClick={submitR1} />
   <input type="submit" name="" value="LOGIN" onClick={submitR} />
-</Link>
-      <p className="link">
-        Don't have an account <br />
-        <a href="#">Sign up </a>here
-      </p>
-      
 
-      
+{/* </Link> */} 
     </div>
     </div>
   );
